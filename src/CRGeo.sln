@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{668132E4-4231-45A2-83D6-33D0F22389F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{9BA76D53-A699-4FDA-AD7D-18905F281BD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks", "backend\src\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj", "{507A7B69-B22D-40E3-800E-55D389F2C819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRGeo.backend.API", "backend\src\Services\CRGeo\CRGeo.backend.API\CRGeo.backend.API.csproj", "{38251C45-D28C-4F70-AA95-0CEB40C260E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0FAB5E8-F9C1-4E2C-8883-F7834733BE2B}"
+	ProjectSection(SolutionItems) = preProject
+		down.sh = down.sh
+		up.sh = up.sh
+		.dockerignore = .dockerignore
+		docker-compose.dcproj = docker-compose.dcproj
+		docker-compose.override.yml = docker-compose.override.yml
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{507A7B69-B22D-40E3-800E-55D389F2C819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{507A7B69-B22D-40E3-800E-55D389F2C819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{507A7B69-B22D-40E3-800E-55D389F2C819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{507A7B69-B22D-40E3-800E-55D389F2C819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38251C45-D28C-4F70-AA95-0CEB40C260E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38251C45-D28C-4F70-AA95-0CEB40C260E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38251C45-D28C-4F70-AA95-0CEB40C260E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38251C45-D28C-4F70-AA95-0CEB40C260E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{507A7B69-B22D-40E3-800E-55D389F2C819} = {9BA76D53-A699-4FDA-AD7D-18905F281BD3}
+		{38251C45-D28C-4F70-AA95-0CEB40C260E8} = {668132E4-4231-45A2-83D6-33D0F22389F5}
+	EndGlobalSection
+EndGlobal
