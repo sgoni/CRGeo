@@ -37,13 +37,15 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="DTA\GetCantonsByProvinceId\"/>
-        <Folder Include="DTA\GetDistrictsByCantonId\"/>
+        <None Remove="Sql\Dta\GetProvinces.sql"/>
+        <EmbeddedResource Include="Sql\Dta\GetProvinces.sql"/>
+        <None Remove="Sql\Dta\GetDistrictsByCityId.sql" />
+        <EmbeddedResource Include="Sql\Dta\GetDistrictsByCityId.sql" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove="Sql\Dta\GetProvinces.sql"/>
-        <EmbeddedResource Include="Sql\Dta\GetProvinces.sql"/>
+      <None Remove="Sql\Dta\GetCitiesByProvinceId.sql" />
+      <EmbeddedResource Include="Sql\Dta\GetCitiesByProvinceId.sql" />
     </ItemGroup>
 
 </Project>

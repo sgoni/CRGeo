@@ -11,7 +11,6 @@ public class GeoRepository : IGeoRepository
 
     public async Task<IEnumerable<Province>> GetProvinces()
     {
-        //var sql = SqlLoader.Load("Sql/Dta/Provinces.sql");
         var nameSpace = string.Concat(SqlLoader.ProjectName(), ".", "Sql.Dta.GetProvinces.sql");
         var sql = SqlLoader.LoadSql(nameSpace);
         using var connection = _context.CreateConnection();
@@ -20,13 +19,23 @@ public class GeoRepository : IGeoRepository
             .Select(x => ((IDictionary<string, object>)x).Adapt<Province>());
     }
 
-    public Task<IEnumerable<GeographicalDistributionDto>> GetCantonsByProvince(int provinceId)
+    public async Task<IEnumerable<GeographicalDistributionDto>> GetCantonsByProvince(int provinceId)
     {
-        throw new NotImplementedException();
+        var nameSpace = string.Concat(SqlLoader.ProjectName(), ".", "Sql.Dta.GetCitiesByProvinceId.sql");
+        var sql = SqlLoader.LoadSql(nameSpace);
+        using var connection = _context.CreateConnection();
+        var result = await connection.QueryAsync<dynamic>(sql, new { Id = provinceId });
+        return result
+            .Select(x => ((IDictionary<string, object>)x).Adapt<GeographicalDistributionDto>());
     }
 
-    public Task<IEnumerable<GeographicalDistributionDto>> GetDuctrictsByCity(int cityId)
+    public async Task<IEnumerable<GeographicalDistributionDto>> GetDistrictsByCity(int cityId)
     {
-        throw new NotImplementedException();
+        var nameSpace = string.Concat(SqlLoader.ProjectName(), ".", "Sql.Dta.GetDistrictsByCityId.sql");
+        var sql = SqlLoader.LoadSql(nameSpace);
+        using var connection = _context.CreateConnection();
+        var result = await connection.QueryAsync<dynamic>(sql, new { Id = cityId });
+        return result
+            .Select(x => ((IDictionary<string, object>)x).Adapt<GeographicalDistributionDto>());
     }
 }

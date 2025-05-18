@@ -51,6 +51,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
 
     // MapsterConfig
     MapsterConfig.RegisterProvinceMapping();
+    MapsterConfig.RegisteGeographicalDistributionMapping();
 }
 
 void ConfigureMiddleware(WebApplication app)
