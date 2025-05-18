@@ -1,6 +1,23 @@
-@CRGeo.backend.API_HostAddress = http://localhost:5282
+# curl -X 'GET' 
+#  'https://localhost:7070/Dta/districts/101' 
+#  -H 'accept: application/json'
+GET {{API_HostAddress}}/Dta/districts/101
+accept: application/json
 
-GET {{CRGeo.backend.API_HostAddress}}/weatherforecast/
+###
+
+# curl -X 'GET' 
+#  'https://localhost:7070/Dta/districts/1' 
+#  -H 'accept: application/json'
+GET {{API_HostAddress}}/Dta/districts/1
+accept: application/json
+
+###
+
+# curl -X 'GET' 
+#  'https://localhost:7070/Dta/Provinces' 
+#  -H 'accept: application/json'
+GET {{API_HostAddress}}/Dta/Provinces
 Accept: application/json
 
 ###
