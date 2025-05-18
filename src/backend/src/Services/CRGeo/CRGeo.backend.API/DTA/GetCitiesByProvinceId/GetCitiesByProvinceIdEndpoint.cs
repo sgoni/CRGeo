@@ -8,7 +8,7 @@ public class GetCitiesByProvinceIdEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("Dta/city/{id}", async (int id, ISender sender) =>
+        app.MapGet("Dta/cities/{id}", async (int id, ISender sender) =>
             {
                 var result = await sender.Send(new GetCitiesByProvinceIdQuery(id));
 

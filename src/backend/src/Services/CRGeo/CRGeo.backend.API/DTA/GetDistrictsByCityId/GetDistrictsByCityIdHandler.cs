@@ -4,7 +4,7 @@ public record GetDistrictsByCantonIdQuery(int CityId) : IQuery<GetDistrictsByCan
 
 public record GetDistrictsByCantonIdResult(IEnumerable<GeographicalDistributionDto> Districts);
 
-public class GetDistrictsByCantonIdHandler(IGeoRepository repository)
+public class GetDistrictsByCityIdHandler(IGeoRepository repository)
     : IQueryHandler<GetDistrictsByCantonIdQuery, GetDistrictsByCantonIdResult>
 {
     public async Task<GetDistrictsByCantonIdResult> Handle(GetDistrictsByCantonIdQuery query,
