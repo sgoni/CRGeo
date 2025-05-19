@@ -74,19 +74,106 @@ The Rest API currently contains 3 methods:
    'https://localhost:7070/Dta/Provinces' \
    -H 'accept: application/json'
    ```
-* Get Cities by Province Id
+
+   ```json
+   {
+      "provinces": [
+         {
+            "provinceId": 1,
+            "provinceName": "San José"
+         },
+         {
+            "provinceId": 2,
+            "provinceName": "Alajuela"
+         },
+         {
+            "provinceId": 3,
+            "provinceName": "Cartago"
+         },
+         {
+            "provinceId": 4,
+            "provinceName": "Heredia"
+         },
+         {
+            "provinceId": 5,
+            "provinceName": "Guanacaste"
+         },
+         {
+            "provinceId": 6,
+            "provinceName": "Puntarenas"
+         },
+         {
+            "provinceId": 7,
+            "provinceName": "Limón"
+         }
+      ]
+   }
+   ```
+  * Get Cities by Province Id
    ```sh
    curl -X 'GET' \
-   'https://localhost:7070/Dta/cities/1' \
+   'https://localhost:7070/Dta/cities/7' \
    -H 'accept: application/json'
    ```
-    
+   ```json
+   {
+    "cities": [
+        {
+            "provinceId": 7,
+            "provinceName": "Limón",
+            "cantonId": 701,
+            "cantonName": "Limón",
+            "districtId": 70101,
+            "districtName": "Limón"
+        },
+        {
+            "provinceId": 7,
+            "provinceName": "Limón",
+            "cantonId": 701,
+            "cantonName": "Limón",
+            "districtId": 70102,
+            "districtName": "Valle La Estrella"
+        }
+     ]   
+   }
+   ``` 
+   
 * Get districts by City Id
    ```sh
    curl -X 'GET' \
    'https://localhost:7070/Dta/districts/202' \
    -H 'accept: application/json'
    ``` 
+   ```json
+     {
+       "districts": [
+           {
+               "provinceId": 7,
+               "provinceName": "Limón",
+               "cantonId": 705,
+               "cantonName": "Matina",
+               "districtId": 70501,
+               "districtName": "Matina"
+           },
+           {
+               "provinceId": 7,
+               "provinceName": "Limón",
+               "cantonId": 705,
+               "cantonName": "Matina",
+               "districtId": 70502,
+               "districtName": "Batán"
+           },
+           {
+               "provinceId": 7,
+               "provinceName": "Limón",
+               "cantonId": 705,
+               "cantonName": "Matina",
+               "districtId": 70503,
+               "districtName": "Carrandí"
+           }
+       ]
+   }
+   ```  
 In the ...\CRGeo\tools\postman\ folder, you can find the "CRGeo.backend.API.postman_collection.json" file, which contains the definition of the Postman collection.
 
 <!-- ROADMAP -->
