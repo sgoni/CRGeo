@@ -47,6 +47,15 @@ public class GeoRepository : IGeoRepository
         var result = await connection.QueryAsync<dynamic>(sql, new { Name = city });
         return result
             .Select(x => ((IDictionary<string, object>)x).Adapt<GeographicalDistributionDto>());
+    }
 
+    public async Task<IEnumerable<GeographicalDistributionDto>> GetDistrictsByName(string district)
+    {
+        var nameSpace = string.Concat(SqlLoader.ProjectName(), ".", "Sql.Dta.GetDistrictsByName.sql");
+        var sql = SqlLoader.LoadSql(nameSpace);
+        using var connection = _context.CreateConnection();
+        var result = await connection.QueryAsync<dynamic>(sql, new { Name = district });
+        return result
+            .Select(x => ((IDictionary<string, object>)x).Adapt<GeographicalDistributionDto>());
     }
 }

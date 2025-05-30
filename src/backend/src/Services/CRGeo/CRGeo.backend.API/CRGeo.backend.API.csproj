@@ -34,6 +34,7 @@
 
     <ItemGroup>
       <Content Remove="Sql\Dta\GetCitiesByName.sql" />
+      <Content Remove="Sql\Dta\GetDistrictsByName.sql" />
     </ItemGroup>
 
     <ItemGroup>
@@ -43,16 +44,25 @@
     <ItemGroup>
         <None Remove="Sql\Dta\GetProvinces.sql" />
         <EmbeddedResource Include="Sql\Dta\GetCitiesByName.sql">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </EmbeddedResource>
-        <EmbeddedResource Include="Sql\Dta\GetProvinces.sql" />
+        <EmbeddedResource Include="Sql\Dta\GetDistrictsByName.sql">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Sql\Dta\GetProvinces.sql">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
         <None Remove="Sql\Dta\GetDistrictsByCityId.sql" />
-        <EmbeddedResource Include="Sql\Dta\GetDistrictsByCityId.sql" />
+        <EmbeddedResource Include="Sql\Dta\GetDistrictsByCityId.sql">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Sql\Dta\GetCitiesByProvinceId.sql" />
-      <EmbeddedResource Include="Sql\Dta\GetCitiesByProvinceId.sql" />
+      <EmbeddedResource Include="Sql\Dta\GetCitiesByProvinceId.sql">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 
 </Project>

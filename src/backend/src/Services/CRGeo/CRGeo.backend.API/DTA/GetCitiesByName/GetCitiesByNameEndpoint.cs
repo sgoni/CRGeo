@@ -1,6 +1,6 @@
 ﻿namespace CRGeo.backend.API.DTA.GetCitiesByName;
 
-// public record GetCitiesByNameRequest(int CityNsme);
+// public record GetCitiesByNameRequest(int Name);
 
 public record GetCitiesByNameResponse(IEnumerable<GeographicalDistributionDto> Cities);
 
