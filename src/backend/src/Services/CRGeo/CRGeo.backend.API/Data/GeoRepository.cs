@@ -38,4 +38,15 @@ public class GeoRepository : IGeoRepository
         return result
             .Select(x => ((IDictionary<string, object>)x).Adapt<GeographicalDistributionDto>());
     }
+
+    public async Task<IEnumerable<GeographicalDistributionDto>> GetCitiesByName(string city)
+    {
+        var nameSpace = string.Concat(SqlLoader.ProjectName(), ".", "Sql.Dta.GetCitiesByName.sql");
+        var sql = SqlLoader.LoadSql(nameSpace);
+        using var connection = _context.CreateConnection();
+        var result = await connection.QueryAsync<dynamic>(sql, new { Name = city });
+        return result
+            .Select(x => ((IDictionary<string, object>)x).Adapt<GeographicalDistributionDto>());
+
+    }
 }

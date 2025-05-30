@@ -11,16 +11,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AspNetCore.HealthChecks.ApplicationStatus" Version="9.0.0"/>
-        <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0"/>
-        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0"/>
-        <PackageReference Include="Carter" Version="9.0.0"/>
-        <PackageReference Include="Dapper" Version="2.1.66"/>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3"/>
-        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.5"/>
-        <PackageReference Include="Serilog.AspNetCore" Version="9.0.0"/>
-        <PackageReference Include="Serilog.Sinks.Config" Version="1.0.0"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0"/>
+        <PackageReference Include="AspNetCore.HealthChecks.ApplicationStatus" Version="9.0.0" />
+        <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
+        <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
+        <PackageReference Include="Carter" Version="9.0.0" />
+        <PackageReference Include="Dapper" Version="2.1.66" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.5" />
+        <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+        <PackageReference Include="Serilog.Sinks.Config" Version="1.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -33,12 +33,19 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj"/>
+      <Content Remove="Sql\Dta\GetCitiesByName.sql" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove="Sql\Dta\GetProvinces.sql"/>
-        <EmbeddedResource Include="Sql\Dta\GetProvinces.sql"/>
+        <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Sql\Dta\GetProvinces.sql" />
+        <EmbeddedResource Include="Sql\Dta\GetCitiesByName.sql">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Sql\Dta\GetProvinces.sql" />
         <None Remove="Sql\Dta\GetDistrictsByCityId.sql" />
         <EmbeddedResource Include="Sql\Dta\GetDistrictsByCityId.sql" />
     </ItemGroup>

@@ -5,4 +5,5 @@ public interface IGeoRepository
     Task<IEnumerable<Province>> GetProvinces();
     Task<IEnumerable<GeographicalDistributionDto>> GetCantonsByProvince(int provinceId);
     Task<IEnumerable<GeographicalDistributionDto>> GetDistrictsByCity(int cityId);
+    Task<IEnumerable<GeographicalDistributionDto>> GetCitiesByName(string city);
 }

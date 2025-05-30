@@ -1,7 +1,15 @@
 # curl -X 'GET' 
+#  'https://localhost:7070/Dta/cities/name/san%20rafael' 
+#  -H 'accept: application/json'
+GET https://localhost:7070/Dta/cities/name/san%20rafael
+accept: application/json
+
+###
+
+# curl -X 'GET' 
 #  'https://localhost:7070/Dta/districts/101' 
 #  -H 'accept: application/json'
-GET {{API_HostAddress}}/Dta/districts/511
+GET {{API_HostAddress}}/Dta/districts/508
 accept: application/json
 
 ###
