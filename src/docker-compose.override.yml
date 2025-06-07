@@ -1,7 +1,7 @@
 services:
   crgeodb:
-    image: postgres:latest
     container_name: crgeodb
+    restart: always
     environment:
       POSTGRES_USER: cr_user
       POSTGRES_PASSWORD: cr_pass
@@ -14,28 +14,26 @@ services:
       - ./init:/docker-entrypoint-initdb.d
       - postgres-data:/var/lib/postgresql/data
 
-##  crgeo.backend.api:
-##    container_name: crgeo.backend.api
-##    restart: always    
-##    environment:
-##      - ASPNETCORE_ENVIRONMENT=Production
-##      - ASPNETCORE_HTTP_PORTS=8080
-##      - ASPNETCORE_HTTPS_PORTS=8081
-##      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/certs/aspnetcore-dev-cert.pfx
-##      - ASPNETCORE_Kestrel__Certificates__Default__Password=5Ram?X$bre_2s*awAx@5-
-##      - ConnectionStrings__Database=Server=crgeodb;Port=5432;Database=CrgeoDb;User Id=cr_user;Password=cr_pass;Include Error Detail=true
-##    ports:
-##      - "7000:8080"
-##      - "7070:8081"
-##    volumes:
-##      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
-##      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
-##      - ./certs/aspnetcore-dev-cert.pfx:/https/aspnetcore-dev-cert.pfx
-##      - ./certs:/app/certs:ro  # Asegúrate de que la carpeta local 'certs' existe y contiene tu certificado- 
-##    networks:
-##      - geonet
-##    depends_on:
-##      - crgeodb
+  crgeo.backend.api:
+    container_name: crgeo.backend.api
+    restart: always    
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/certs/aspnetcore-dev-cert.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=5Ram?X$bre_2s*awAx@5
+      - ConnectionStrings__Database=Server=crgeodb;Port=5432;Database=crgeodb;User Id=cr_user;Password=cr_pass;Include Error Detail=true
+    ports:
+      - "7000:8080"
+      - "7070:8081"
+    volumes:
+      - ./certs/aspnetcore-dev-cert.pfx:/https/aspnetcore-dev-cert.pfx
+      - ./certs:/app/certs:ro  # Asegúrate de que la carpeta local 'certs' existe y contiene tu certificado- 
+    networks:
+      - geonet
+    depends_on:
+      - crgeodb
 
 networks:
   geonet:            

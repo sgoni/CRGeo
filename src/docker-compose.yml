@@ -2,11 +2,11 @@ services:
   crgeodb:
     image: postgres:latest
       
-      ##  crgeo.backend.api:
-      ##    image: crgeo.backend.api
-      ##    build:
-    ##      context: .
-    ##      dockerfile: backend/src/Services/CRGeo/CRGeo.backend.API/Dockerfile
+  crgeo.backend.api:
+    image: crgeo.backend.api
+    build:
+      context: .
+      dockerfile: backend/src/Services/CRGeo/CRGeo.backend.API/Dockerfile
 
 volumes:
   postgres-data:   
