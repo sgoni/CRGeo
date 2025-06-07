@@ -8,7 +8,7 @@ public class GetDistrictsByNameEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("Dta/districta/name/{name}", async (string name, ISender sender) =>
+        app.MapGet("Dta/districts/name/{name}", async (string name, ISender sender) =>
             {
                 var result = await sender.Send(new GetDistrictsByNameQuery(name));
 

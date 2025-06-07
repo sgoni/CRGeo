@@ -1,7 +1,7 @@
 # curl -X 'GET' 
-#  'https://localhost:7070/Dta/districta/name/san%20rafael' 
+#  'https://localhost:5050/Dta/districts/name/Cabeceras' 
 #  -H 'accept: application/json'
-GET https://localhost:7070/Dta/districta/name/san%20rafael
+GET https://localhost:5050/Dta/districts/name/san%20rafael
 accept: application/json
 
 ###

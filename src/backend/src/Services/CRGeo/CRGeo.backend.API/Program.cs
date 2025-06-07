@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 ConfigureServices(builder.Services, builder.Configuration);
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
@@ -30,6 +31,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     // Add Serilog
     Log.Logger = new LoggerConfiguration()
         .ReadFrom.Configuration(configuration)
+        .Enrich.FromLogContext()
         .CreateLogger();
 
     // Add Health Checks
